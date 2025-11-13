@@ -30,8 +30,9 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/auth/**", "/h2-console/**", "/login", "/register", 
-                                 "/*.html", "/css/**", "/js/**", "/images/**").permitAll()
+                .requestMatchers("/", "/api/auth/**", "/h2-console/**", "/login", "/register", 
+                                 "/*.html", "/css/**", "/js/**", "/images/**", "/**/*.html", 
+                                 "/**/*.css", "/**/*.js").permitAll()
                 .anyRequest().authenticated()
             )
             .headers(headers -> headers.frameOptions(frame -> frame.disable()))
