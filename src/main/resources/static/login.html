@@ -214,9 +214,9 @@
                     localStorage.setItem('authToken', data.token);
                     localStorage.setItem('username', data.username);
                     
-                    // Redirect to dashboard or home page
+                    // Redirect to home page
                     setTimeout(() => {
-                        window.location.href = '/dashboard.html';
+                        window.location.href = '/home.html';
                     }, 1500);
                 } else {
                     messageDiv.className = 'message error';
