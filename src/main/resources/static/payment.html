@@ -530,10 +530,11 @@
 
     <script>
         // Check if user is logged in
-        const token = localStorage.getItem('token');
+        const token = localStorage.getItem('authToken');
         const username = localStorage.getItem('username');
         
         if (!token) {
+            localStorage.setItem('redirectAfterLogin', 'payment.html');
             window.location.href = 'login.html';
         }
 

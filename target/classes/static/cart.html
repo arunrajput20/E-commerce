@@ -328,7 +328,7 @@
 
     <script>
         // Check if user is logged in
-        const token = localStorage.getItem('token');
+        const token = localStorage.getItem('authToken');
         const username = localStorage.getItem('username');
         
         if (token && username) {
@@ -444,6 +444,8 @@
         // Proceed to checkout
         function proceedToCheckout() {
             if (!token) {
+                // Store the intended destination
+                localStorage.setItem('redirectAfterLogin', 'payment.html');
                 showMessage('Please login to proceed', 'error');
                 setTimeout(() => {
                     window.location.href = 'login.html';
