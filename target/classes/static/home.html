@@ -342,14 +342,6 @@
 
         // Add to cart function
         function addToCart(productId) {
-            if (!token) {
-                showMessage('Please login to add items to cart', 'error');
-                setTimeout(() => {
-                    window.location.href = 'login.html';
-                }, 1500);
-                return;
-            }
-
             // Get cart from localStorage
             let cart = JSON.parse(localStorage.getItem('cart') || '[]');
             

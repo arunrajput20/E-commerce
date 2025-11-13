@@ -452,14 +452,6 @@
 
         // Add to cart
         function addToCart(productId) {
-            if (!token) {
-                showMessage('Please login to add items to cart', 'error');
-                setTimeout(() => {
-                    window.location.href = 'login.html';
-                }, 1500);
-                return;
-            }
-
             let cart = JSON.parse(localStorage.getItem('cart') || '[]');
             const product = allProducts.find(p => p.id === productId);
             const existingItem = cart.find(item => item.id === productId);
